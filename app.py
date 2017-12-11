@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import urllib
+import urllib.request
 import json
 import os
 
@@ -46,8 +47,8 @@ def busETA(req):
     APIURL = "https://arrivelah.herokuapp.com/?id="
     url = APIURL + str(busStopId)
     print("api url:", url)
-    # res = urllib.request.urlopen(APIURL + str(busStopId)).read()
-    res = requests.get('http://example.com').content
+    res = urllib.request.urlopen(APIURL + str(busStopId)).read()
+    # res = requests.get('http://example.com').content
     print("res_read:", res)
     resJSON = json.loads(res)
     print("api response;", resJSON)
